@@ -1,0 +1,40 @@
+{% extends 'admin-base.html' %}
+
+{% block title %}Examr Admin App Base Template {% endblock %}
+
+{% block header_title %}App Template{% endblock %}
+{% block header_description %}This is an app template base on the <code>admin-base.html</code> template{% endblock %}
+
+{% block app %}
+<div class="col l7 m7 s12">
+    <div class="card-panel  yellow accent-1">
+        <h3>{{ examinee.first_name }} {{ examinee.middle_name }} {{ examinee.last_name }}</h3>
+        <div class="row">
+            <div class="col l4 m4 s12 hide-on-small-only">
+                <p><strong>ID Number</strong></p>
+                <p><strong>School</strong></p>
+                <p><strong>Email Address</strong></p>
+                <p><strong>Mobile Number</strong></p>
+                <p><strong>Address</strong></p>
+            </div>
+            <div class="col l8 m8 s12">
+                <p>{{ examinee.id_number }}</p> 
+                <p>{{ examinee.school }}</p>
+                <p>{{ examinee.email }}</p>
+                <p>{{ examinee.cel_number }}</p>
+                <p>{{ examinee.address }}</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col l5 m5 s12">
+    <div class="card-panel">
+        {% block main_app %}
+        <h4 class="grey-text">Main app</h4>
+        <p>This is the <strong class="green-text accent-4">main_app</strong> block. It contains form controls for
+            adding additional data to examinees. Feel free to override it</p>
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}

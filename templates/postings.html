@@ -1,0 +1,59 @@
+{% extends 'admin-app-base.html' %}
+
+{% block title %} Postings - Examr {% endblock %}
+
+{% block postings_tab %} active {% endblock %}
+
+{% block header_title %}Pre-evaluation Postings{% endblock %}
+{% block header_description %}
+This page contains the recommendations for each students. To add and edit recommendations, first, find astudent using
+the search tool. and edit the recommendations on the lower right card.
+{% endblock %}
+
+{% block utility %}
+<div class="card-panel yellow accent-1">
+    <h1 class="center-align">Step 3</h1>
+    <p>Posting stage. This step is conducted after an initial review and interview of the applicants recommendations and
+        comprehension. This is where students gets their recommendation for specific courses.</p>
+</div>
+{% endblock %}
+
+{% block main_app %}
+<h3 class="center-align green-text accent-3">Postings</h3>
+<p class="center grey-text">Recommended Courses</p>
+<div class="row">
+    <form>
+        <div class="col l4 m4 s4">
+            <p><label><input type="checkbox" name="recommendations"><span class="black-text">ALS Card</span></label></p>
+        </div>
+        <div class="col l4 m4 s4">
+            <p><label><input type="checkbox" name="recommendations"><span>BSBA</span></label></p>
+        </div>
+        <div class="col l4 m4 s4">
+            <p><label><input type="checkbox" name="recommendations"><span>BS ENTREP</span></label></p>
+        </div>
+        <div class="col l4 m4 s4">
+            <p><label><input type="checkbox" name="recommendations"><span>BSOA</span></label></p>
+        </div>
+        <div class="col l4 m4 s4">
+            <p><label><input type="checkbox" name="recommendations"><span>BSED</span></label></p>
+        </div>
+        <div class="col l4 m4 s4">
+            <p><label><input type="checkbox" name="recommendations"><span>ACT/BSIS</span></label></p>
+        </div>
+        <div class="col l4 m4 s4">
+            <p><label><input type="checkbox" name="recommendations"><span>BEED</span></label></p>
+        </div>
+        <div class="col l4 m4 s4">
+            <p><label><input type="checkbox" name="remarks" id="remarks"><span>No docs submitted</span></label></p>
+        </div>
+        <div class="col l4 m4 s4">
+            <p><label><input type="checkbox" name="remarks" id="remarks"><span>OK for CEE</span></label></p>
+        </div>
+        <button class="btn waves-effect waves-light center" type="submit" name="action">save
+            <i class="material-icons right">save</i>
+        </button>
+        <a href="#" class="waves-effect waves-light btn red accent-1">reset<i class="material-icons right">close</i></a>
+    </form>
+</div>
+{% endblock %}

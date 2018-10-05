@@ -1,0 +1,127 @@
+{% extends 'exam-base.html' %}
+{% block title %}
+    Sample Exam
+{% endblock %}
+
+{% block navcontent %}
+<p class="center" style="font-size: x-large">Time Remaining: <span id="hour">1</span>:<span id="min">59</span>:<span id="sec">59</span></span> </p>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="center green-text accent-2">Reading Comprehension</h1>
+        <br>
+        <p>
+            <span style="font-size: large; font-weight: 700;">DIRECTIONS: </span>
+            Each passage below is followed by questions based on its content. Answer all
+        </p>
+        <br>
+        <blockquote>
+            <p style="font-weight: 300; font-size: large">
+                Read not to contradict and confute, nor to believe and take for granted, but to weigh and
+                consider. Some books are to be tasted, others to be swallowed, and some few to be chewed and
+                digested.; That is, some books are to be read, only in parts; others to be read but not curiously, and
+                some few to read wholly, and with dilligence and attention. Some books also may be read by deputy,
+                and extracts made of them by others; but that would be only in the less important arguments and the
+                meaner sortof books; else distilled books are like common distilled waters, flashy things. Reading
+                maketh a full man; Conference a ready man; and writing an exact man; and therefore, if a man writes
+                little he need have a great memory; if he confers little he need have a present with; and if he reads a little
+                he need have much cunning, to seem to know that he doth not. Histories make men wise; Poets, witty;
+                the Mathematics, subtle; Natural Philosophy, deep; Moral, grave; Logic and Rhetoric, able to contend;
+                Abeunt studia in mores.
+            </p>
+            <cite>
+                (FRANCIS BACON, Essay: 1561 - 1626)
+            </cite>
+        </blockquote>
+        <form>
+            <fieldset>
+            <legend>Passage's Question</legend>
+            <ul>
+                <li>
+                    What are meant to be digested?
+                    <ul>
+                        <li><p><label><input class="with-gap" type="radio" name="ans1"><span>men</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans1" checked><span>water</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans1"><span>books</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans1"><span>more</span></label></p></li>
+                    </ul>
+                </li>
+                <li>
+                    When do you consider a man full?
+                    <ul>
+                        <li><p><label><input class="with-gap" type="radio" name="ans2"><span>when he can confer</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans2" checked><span>when he can read</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans2"><span>when he can see</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans2"><span>when he can read and understand</span></label></p></li>
+                    </ul>
+                </li>
+                <li>
+                    How can a reader learn from a book?
+                    <ul>
+                        <li><p><label><input class="with-gap" type="radio" name="ans3"><span>when he joins arguments</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans3"><span>when he knows many writers</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans3"><span>when he can write poems</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans3" checked><span>when he applies and assimilates the words.</span></label></p></li>
+                    </ul>
+                </li>
+                <li>
+                    According to the passage , why does a man read?
+                    <ul>
+                        <li><p><label><input class="with-gap" type="radio" name="ans4"><span>a. to contradict and confute</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans4"><span>b. to believe and take for granted</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans4"><span>c. to taste and swallow</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans4" checked><span>d. to weigh and consider</span></label></p></li>
+                    </ul>
+                </li>
+                <li>
+                    How will a reader treat a book?
+                    <ul>
+                        <li><p><label><input class="with-gap" type="radio" name="ans4"><span>a. as a friend</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans4"><span>b. as a confidate</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans4"><span>c. as a memoire</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans4" checked><span>d. as a historian</span></label></p></li>
+                    </ul>
+                </li>
+            </ul>
+            </fieldset>
+            <br>
+            <div class="row">
+                <button type="submit" class="btn-large green col l6 m6 s6">Next</button>
+                <button type="reset" class="btn-large orange col l6 m6 s6">Clear All</button>
+            </div>
+        </form>
+
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+hours_remaining = 1;
+        minutes_remaining = 59;
+        seconds_remaining = 59;
+
+        var sidenav = document.querySelector('.sidenav');
+        sidenav_instance = M.Sidenav.init(sidenav);
+
+        function startTimer(){
+            if(seconds_remaining > 0) seconds_remaining--;
+            else {
+                seconds_remaining = 59;
+                if(minutes_remaining > 0) minutes_remaining--;
+                else {
+                    minutes_remaining = 59;
+                    if(hours_remaining > 0) hours_remaining--;
+                    else alert('times up!')
+                }
+            }
+
+
+
+            document.getElementById('sec').innerHTML = seconds_remaining;
+            document.getElementById('min').innerHTML = minutes_remaining;
+            document.getElementById('hour').innerHTML = hours_remaining;
+        }
+        setInterval(startTimer, 1000);
+        </script>
+{% endblock %}

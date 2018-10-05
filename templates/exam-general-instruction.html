@@ -1,0 +1,99 @@
+{% extends 'exam-base.html' %}
+{% block title %}General Instructions{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="center green-text accent-2">General Instrucions</h1>
+        <p class="center" style="font-weight: 300; font-size: large">This is a test to know how well you can solve different
+            kinds of problem. The following are sample questions. You are to darken the circle provided in the separate answer sheet to identify your correct answer.
+
+        </p>
+        <br>
+        <form>
+            <fieldset>
+                <legend>Sample Questions</legend>
+                <ul>
+                <li>
+                    Ice is to solid as water is to
+                    <ul>
+                        <li><p><label><input class="with-gap" type="radio" name="ans1"><span>freeze</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans1" checked><span>liquid</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans1"><span>land</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans1"><span>thirst</span></label></p></li>
+                    </ul>
+                </li>
+                <br>
+                <li>
+                    The difference of 3-5 is :
+                    <ul>
+                        <li><p><label><input class="with-gap" type="radio" name="ans2"><span>2</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans2" checked><span>-2</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans2"><span>0</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans2"><span>8</span></label></p></li>
+                    </ul>
+                </li>
+                <li>
+                    Which of the following is spelled correctly:
+                    <ul>
+                        <li><p><label><input class="with-gap" type="radio" name="ans3"><span>acommodate</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans3"><span>accomodate</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans3"><span>acomodate</span></label></p></li>
+                        <li><p><label><input class="with-gap" type="radio" name="ans3" checked><span>accommodate</span></label></p></li>
+                    </ul>
+                </li>
+            </ul>
+            </fieldset>
+            <br>
+            <br>
+            <br>
+        </form>
+        <div class="card-panel">
+            <p>Subject Areas included in the test are the following:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Number of Items</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>English</td>
+                        <td>30 items</td>
+                    </tr>
+                    <tr>
+                        <td>Filipino</td>
+                        <td>15 items</td>
+                    </tr>
+                    <tr>
+                        <td>General Information</td>
+                        <td>10 items</td>
+                    </tr>
+                    <tr>
+                        <td>Mathematics</td>
+                        <td>30 items</td>
+                    </tr>
+                    <tr>
+                        <td>Science</td>
+                        <td>15 items</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>100 items</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <br>
+            <br>
+            <p class="center" style="font-size: large; font-weight: 700">
+                You are given one (1) hour to answer this test.
+                If you finish the time ends, you can review.
+                No other instructions be given after the start of the test.
+            </p>
+            <p class="center red-text" style="font-size: xx-large">DO NOT START UNTIL YOU ARE TOLD TO DO SO</p>
+            <br>
+            <div class="row"><a href="{{ url_for('exam_sample') }}" class="btn-large green accent-4 col l12 m12 s12">Start The Exam</a></div>
+    </div>
+
+{% endblock %}

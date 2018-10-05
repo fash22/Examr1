@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <!-- Material Icon CDN -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Path of the materialize.min.css file -->
+    <link rel="stylesheet" href="../static/css/materialize.min.css" media="screen,projection">
+    <!-- Custom css file path -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Used as an example only to position the footer at the end of the page.
+      You can delete these styles or move it to your custom css file -->
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            background: -webkit-linear-gradient(#2196f3, #69f0ae);
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
+        .header-1 {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav class="nav-extended">
+          <div class="nav-wrapper blue">
+            <div class="container">
+                    
+              <a href="#" class="brand-logo">LOGO</a>
+              <a href="#" data-target="mobile-sidenav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+              <a href="#" style="visibility:hidden">Blank</a>
+              
+              
+              <ul class="tabs tabs-transparent">
+                <li class="tab"><a href="#test1">Test 1</a></li>
+                <li class="tab"><a class="active" href="#test2">Test 2</a></li>
+                <li class="tab disabled"><a href="#test3">Disabled Tab</a></li>
+                <li class="tab"><a href="#test4">Test 4</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- tabs content -->
+        <div id="test1" class="col s12">Test 1</div>
+        <div id="test2" class="col s12">Test 2</div>
+        <div id="test3" class="col s12">Test 3</div>
+        <div id="test4" class="col s12">Test 4</div>
+    </div>
+    <nav id="mobile-sidenav" class="sidenav">
+        <h1 class="center blue-text">Examr</h1>
+        <p class="center grey-text">Version 0.0.1</p>
+        
+
+        <div class="divider"></div>
+        <ul>
+            <li><a href="#" class="active">Login</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <form class=" show-on-med-and-down">
+                <div class="input-field">
+                    <input type="search" name="search" id="search">
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
+        </form>
+    </nav>
+
+
+
+    
+    <main style="margin: 4rem 1rem 1rem 1rem;">
+        <div class="card-panel white">
+            <h1 class="green-text accent-3">Examinees</h1>
+            <div class="row">
+                <div class="col l6 m6 s6">
+                    <input type="text" name="search" id="search"><a href="#" class="waves-effect waves-light btn green accent-4">Button</a>
+                </div>
+            </div>
+
+            <table class="striped responsive-table">
+                <thead>
+                    <tr>
+                        <th data-field="id">Last Name</th>
+                        <th data-field="name">First Name</th>
+                        <th data-field="price">Middle Name</th>
+                        <th data-field="price">School</th>
+                        <th data-field="price">Documents Completed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>De Frondoza</td>
+                        <td>Juanito</td>
+                        <td>Busan</td>
+                        <td>Saint Phillip Academy</td>
+                        <td class="green-text accent-3">YES</td>
+                    </tr>
+                    <tr>
+                        <td>Cansanilla</td>
+                        <td>Reymart</td>
+                        <td>Magdato</td>
+                        <td>Don Jugo Technical College</td>
+                        <td class="red-text accent-3">NO</td>
+                    </tr>
+                    <tr>
+                        <td>Bumutwa</td>
+                        <td>Maria Joy</td>
+                        <td>Jimenez</td>
+                        <td>Tanglaw National High School</td>
+                        <td class="red-text accent-3">NO</td>
+                    </tr>
+                    <tr>
+                        <td>Dela Pugan</td>
+                        <td>Vincent Val</td>
+                        <td>Cawali</td>
+                        <td>Tanglaw National High School</td>
+                        <td class="green-text accent-3">YES</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer class="page-footer green accent-4">
+        <div class="footer-copyright">
+            <div class="container">
+                © 2018 Cofi.co Solutions
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../static/js/materialize.min.js"></script>
+    <script>
+        var sidenav = document.querySelector('.sidenav');
+        sidenav_instance = M.Sidenav.init(sidenav);
+    </script>
+</body>
+
+</html>

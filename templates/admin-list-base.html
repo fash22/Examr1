@@ -1,0 +1,34 @@
+{% extends 'admin-base.html' %}
+{% block title %}Examr Admin List Base Template {% endblock %}
+
+
+{% block header_title %}List Base Template{% endblock %}
+{% block header_description %}
+This is based on the admin-base template.
+{% endblock %}
+
+
+{% block app %}
+<table class="responsive-table">
+    <thead>
+        <tr>
+            <th data-field="id">ID Number</th>
+            <th data-field="name">Last Name</th>
+            <th data-field="price">First Name</th>
+            <th data-field="price">Middle Name</th>
+            <th data-field="price">School</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for examinee in examinees %}
+        <tr>
+            <td>{{ examinee.id }}</td>
+            <td>{{ examinee.last_name }}</td>
+            <td>{{ examinee.first_name }}</td>
+            <td>{{ examinee.middle_name }}</td>
+            <td>{{ examinee.school }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

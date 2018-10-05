@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <!-- Material Icon CDN -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Path of the materialize.min.css file -->
+    <link rel="stylesheet" href="../static/css/materialize.min.css" media="screen,projection">
+    <!-- Custom css file path -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Used as an example only to position the footer at the end of the page.
+      You can delete these styles or move it to your custom css file -->
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+            background: -webkit-linear-gradient(#2196f3, #69f0ae);
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
+        .header-1 {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar-fixed">
+        <nav id="navbar">
+            <div class="blue darken-2 nav-wrapper">
+                <div class="container">
+                    <a href="#" class="brand-logo">Examr</a>
+                    <a href="" class="sidenav-trigger" data-target="mobile-sidenav">click me</a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="#" class="active">Login</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <nav id="mobile-sidenav" class="sidenav">
+        <h1 class="center blue-text">Examr</h1>
+        <p class="center grey-text">Version 0.0.1</p>
+
+        <div class="divider"></div>
+        <ul>
+            <li><a href="#" class="active">Login</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <main style="margin-top: 2rem;">
+        <div class="card-panel">
+            <form method="POST" action="/register">
+                <h1 class="center green-text accent-3">College Entrance Eximination</h1>
+                <p class="center grey-text">Registration Form</p>
+                <div class="divider"></div>
+                <div id="name-details" class="row">
+                    <div class="container">
+                        <p>Name</p>
+                        <div class="col l4 m4 s12">
+                            <div class="input-field">
+                                {{ form.first_name.label }}
+                                {{ form.first_name }}
+                            </div>
+                        </div>
+                        <div class="col l4 m4 s12">
+                            <div class="input-field">
+                                {{ form.middle_name.label }}
+                                {{ form.middle_name }}
+                            </div>
+                        </div>
+                        <div class="col l4 m4 s12">
+                            <div class="input-field">
+                                {{ form.last_name.label }}
+                                {{ form.last_name }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div id="address-details" class="row">
+                    <div class="container">
+                        <p>Bacolod Address</p>
+                        <div class="col l4 m4 s12">
+                            <div class="input-field">
+                                <label for="bac-street">Street</label>
+                                <input id="bac-street" name="bac-street" type="text" required>
+                            </div>
+                        </div>
+                        <div class="col l4 m4 s12">
+                            <div class="input-field">
+                                <label for="bac-barangay">Purok</label>
+                                <input id="bac-barangay" name="bac-barangay" type="text" required>
+                            </div>
+                        </div>
+                        <div class="col l4 m4 s12">
+                            <div class="input-field">
+                                <label for="city">Barangay</label>
+                                <input id="city" name="city" type="text" required>
+                            </div>
+                        </div>
+                        <p>Permanent Address</p>
+                        <div class="col l4 m4 s12">
+                            <div class="input-field">
+                                <label for="street">Street</label>
+                                <input id="street" name="street" type="text" required>
+                            </div>
+                        </div>
+                        <div class="col l4 m4 s12">
+                            <div class="input-field">
+                                <label for="barangay">Barangay</label>
+                                <input id="barangay" name="barangay" type="text" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div id="personal-details" class="row">
+                    <div class="container">
+                        <div class="col l2 m2 s6">
+                            <label>Civil Status</label>
+                            <select id="civil-status" name="civil-status" required>
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                                <option value="seperated">Seperated</option>
+                                <option value="widow">Widow</option>
+                            </select>
+                        </div>
+                        <div class="col l2 m2 s6">
+                            <label>Gender</label>
+                            <select id="gender" name="gender" required>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="col l2 m2 s6">
+                            <div class="input-field">
+                                <label for="birthdate">Date of Birth</label>
+                                <input id="birthdate" name="birthdate" type="date" required>
+                            </div>
+                        </div>
+                        <div class="col l2 m2 s6">
+                            <div class="input-field">
+                                <label for="age">Age</label>
+                                <input id="age" name="age" type="number" min="1" max="60" required>
+                            </div>
+                        </div>
+                        <div class="col l2 m2 s6">
+                            <div class="input-field">
+                                <label for="tel-number">Telephone Number</label>
+                                <input id="tel-number" name="tel-number" type="tel">
+                            </div>
+                        </div>
+                        <div class="col l2 m2 s6">
+                            <div class="input-field">
+                                <label for="cell-number">Cell Number</label>
+                                <input id="cel-number" name="cel-number" type="number" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div id="school-details" class="row">
+                    <div class="container">
+                        <p>School Last Attended</p>
+                        <div class="col l6 m6 s12">
+                            <div class="input-field">
+                                {{ form.school.label }}
+                                {{ form.school }}
+                            </div>
+                        </div>
+
+                        <div class="col l3 m3 s12">
+                            <div class="input-field">
+                                <label for="year-graduated">Year Graduated</label>
+                                <input id="year-graduated" name="year-graduated" type="number" required>
+                            </div>
+                        </div>
+                        <div class="col l3 m3 s12">
+                            <div class="input-field">
+                                <label for="gpa">GPA</label>
+                                <input id="gpa" name="gpa" type="number" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div id="parents-guardian-details" class="row">
+                    <div class="container">
+                        <p>Father's Name</p>
+                        <div class="col l3 m3 s6">
+                            <div class="input-field">
+                                <label for="f-firstname">First Name</label>
+                                <input id="f-firstname" name="f-firstname" type="text" required>
+                            </div>
+                        </div>
+                        <div class="col l3 m3 s6">
+                            <div class="input-field">
+                                <label for="f-middletname">Middle Name</label>
+                                <input id="f-middlename" name="f-middlename" type="text" required>
+                            </div>
+                        </div>
+                        <div class="col l3 m3 s6">
+                            <div class="input-field">
+                                <label for="f-lastname">Last Name</label>
+                                <input id="f-lastname" name="f-lastname" type="text" required>
+                            </div>
+                        </div>
+                        <div class="col l3 m3 s6">
+                            <div class="input-field">
+                                <label for="f-occupation">Occupation</label>
+                                <input id="f-occupation" name="f-occupation" type="text" required>
+                            </div>
+                        </div>
+                        <p>Mother's Name</p>
+                        <div class="col l3 m3 s6">
+                            <div class="input-field">
+                                <label for="m-firstname">First Name</label>
+                                <input id="m-firstname" name="m-firstname" type="text" required>
+                            </div>
+                        </div>
+                        <div class="col l3 m3 s6">
+                            <div class="input-field">
+                                <label for="m-middletname">Middle Name</label>
+                                <input id="m-middlename" name="m-middlename" type="text" required>
+                            </div>
+                        </div>
+                        <div class="col l3 m3 s6">
+                            <div class="input-field">
+                                <label for="m-lastname">Last Name</label>
+                                <input id="m-lastname" name="m-lastname" type="text" required>
+                            </div>
+                        </div>
+                        <div class="col l3 m3 s6">
+                            <div class="input-field">
+                                <label for="m-occupation">Occupation</label>
+                                <input id="m-occupation" name="m-occupation" type="text" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="degree-details" class="row">
+                    <div class="container">
+                        <div class="col l4 m4 s6">
+                            <label>Degree Program Applied</label>
+                            <select id="degree" name="degree" required>
+                                <option value="bsba">BSBA</option>
+                                <option value="bsentrep">BS Entrep</option>
+                                <option value="bsoa">BSOA</option>
+                                <option value="actbsis">ACT/BSIS</option>
+                                <option value="bsit">BSIT</option>
+                                <option value="beed">BEED</option>
+                                <option value="bsed">BSED</option>
+                            </select>
+                        </div>
+                        <div class="col l4 m4 s12">
+                            <label>
+                                <input type="radio" name="student-type" value="working" checked><span>Working Student</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="student-type" value="full-time" checked><span>Full-time
+                                    Student</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div id="control-buttons" class="row">
+                    <div class="container">
+                        <button class="btn waves-effect waves-light col l6 m6 blue accent-3" type="submit">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                        <a class="btn waves-effect waves-light col l6 m6 orange">Clear
+                            <i class="material-icons right">send</i>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- <div class="card-panel">
+            <form method="GET">
+                <div class="container">
+                    <div class="row">
+                        <div id="pre-eval-details">
+                            <div class="col l6 m6 s12">
+                                <h2 class="green-text accent-3">Pre-evaluation documents</h2>
+                                <p>Documents Submitted</p>
+                                <p>
+                                    <label>
+                                        <input type="checkbox" name="recommendations" id="recommendations" value="reportcard">
+                                        <span>Report Card</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input type="checkbox" name="recommendations" id="recommendations" value="tor">
+                                        <span>TOR</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input type="checkbox" name="recommendations" id="recommendations" value="alscard">
+                                        <span>ALS Card</span>
+                                    </label>
+                                </p>
+                                <div class="input-field">
+                                    <label for="other-pre-eval-doc">Others(please specify)</label>
+                                    <input id="other-pre-eval-doc" name="other-pre-eval-doc" type="text" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="init-eval-details">
+                            <div class="col l6 m6 s12">
+                                <h2 class="green-text accent-3">Initial Evaluation Results</h2>
+                                <p>Recommended to be accepted to</p>
+                                <div class="row">
+                                    <div class="col l6 m6 s6">
+                                        <p>
+                                            <label>
+                                                <input type="checkbox" name="recommendations" id="recommendations"
+                                                    value="bsba">
+                                                <span>BSBA</span>
+                                            </label>
+                                        </p>
+                                        <p>
+                                            <label>
+                                                <input type="checkbox" name="recommendations" id="recommendations"
+                                                    value="bsentrep">
+                                                <span>BS Entrep</span>
+                                            </label>
+                                        </p>
+                                        <p>
+                                            <label>
+                                                <input type="checkbox" name="recommendations" id="recommendations"
+                                                    value="bsoa">
+                                                <span>BSOA</span>
+                                            </label>
+                                        </p>
+                                        <p>
+                                            <label>
+                                                <input type="checkbox" name="recommendations" id="recommendations"
+                                                    value="bsed">
+                                                <span>BSED</span>
+                                            </label>
+                                        </p>
+                                        <p>
+                                            <label>
+                                                <input type="checkbox" name="recommendations" id="recommendations"
+                                                    value="actbsis">
+                                                <span>ACT/BSIS</span>
+                                            </label>
+                                        </p>
+                                        <p>
+                                            <label>
+                                                <input type="checkbox" name="recommendations" id="recommendations"
+                                                    value="bsit">
+                                                <span>BSIT</span>
+                                            </label>
+                                        </p>
+                                        <p>
+                                            <label>
+                                                <input type="checkbox" name="recommendations" id="recommendations"
+                                                    value="beed">
+                                                <span>BEED</span>
+                                            </label>
+                                        </p>
+                                    </div>
+                                    <div class="col l6 m6 s6">
+                                        <p>Other result</p>
+                                        <p>
+                                            <label><input type="checkbox" name="eval-result" value="no-doc-submitted"><span>No
+                                                    document submitted</span></label>
+                                            <label><input type="checkbox" name="eval-result" value="no-doc-submitted"><span>OK
+                                                    for CEE</span></label>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+        </div> -->
+    </main>
+    <footer class="page-footer green accent-4">
+        <div class="footer-copyright">
+            <div class="container">
+                © 2018 Cofi.co Solutions
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../static/js/materialize.min.js"></script>
+    <script>
+        var sidenav = document.querySelector('.sidenav');
+        sidenav_instance = M.Sidenav.init(sidenav);
+
+        var civil_status_select = document.querySelector('select#civil-status');
+        civil_status_select_instance = M.FormSelect.init(civil_status_select);
+
+        var gender_select = document.querySelector('select#gender');
+        gender_select_instance = M.FormSelect.init(gender_select);
+
+        var degree_select = document.querySelector('select#degree');
+        degree_select_instance = M.FormSelect.init(degree_select);
+    </script>
+</body>
+
+</html>

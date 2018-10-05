@@ -1,0 +1,41 @@
+{% extends 'admin-app-base.html' %}
+
+{% block title %} Interviews - Examr {% endblock %}
+
+{% block interviews_tab %} active {% endblock %}
+
+{% block header_title %}Interview Summary{% endblock %}
+{% block header_description %}
+This page contains the individual interview details of each student. To start with, search a specific student using the
+search bar. Once found, click the name of the student. The card on the bottom right will change its values indicating
+that a new student is being loaded.
+You can edit interview details there, and once your done, press the save button.
+{% endblock %}
+
+{% block utility %}
+<div class="card-panel orange accent-1">
+    <h1 class="center-align">Step 2</h1>
+    <p>The interview phase. After the examinee has finished complying with the documents, he or she will undergo an
+        interview.</p>
+</div>
+{% endblock %}
+
+{% block main_app %}
+<h3 class="center-align green-text accent-3">Interview Details</h3>
+<div class="row">
+    <form>
+        <div class="input-field col l12 m12 s12">
+            <label for="summary">Summary</label>
+            <textarea type="text" id="summary" name="summary" class="materialize-text-area"></textarea>
+        </div>
+        <div class="input-field col l12 m12 s12">
+            <label for="grade">Grade</label>
+            <p class="range-field"><input type="range" id="grade" name="grade" min="0" max="100"></p>
+        </div>
+        <button class="btn waves-effect waves-light center" type="submit" name="action">save
+            <i class="material-icons right">save</i>
+        </button>
+        <a href="#" class="waves-effect waves-light btn red accent-1">reset<i class="material-icons right">close</i></a>
+    </form>
+</div>
+{% endblock %}

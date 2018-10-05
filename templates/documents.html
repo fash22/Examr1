@@ -1,0 +1,48 @@
+{% extends 'admin-app-base.html' %}
+
+{% block title %} Documents - Examr {% endblock %}
+
+{% block documents_tab %} active {% endblock %}
+
+{% block header_title %}Pre-evaulation Documents{% endblock %}
+{% block header_description %}
+This page contains the the checklist of pre-evaluation documents for each student.
+To view and edit student checklist, first, search for the student using the search below. then click the name of the
+student.
+The checklist on the lower right will change values indicating that a new checklist has loaded.
+Feel free now to edit and save the edited checklist.
+{% endblock %}
+
+{% block utility %}
+<div class="card-panel red accent-1">
+    <h1 class="center-align">Step 1</h1>
+    <p>The first step before taking the exam. Documents must be submitted before the deadline. Failure to do so will
+        forfiet the examinee's application</p>
+</div>
+{% endblock %}
+
+{% block main_app %}
+<h3 class="center-align green-text accent-3">Checklist</h3>
+<div class="row">
+    <form>
+        <div class="col l6 m6 s6">
+            <p><label><input type="checkbox" name="documents"><span class="black-text">ALS Card</span></label></p>
+        </div>
+        <div class="col l6 m6 s6">
+            <p><label><input type="checkbox" name="documents" disabled checked><span>TOR</span></label></p>
+        </div>
+        <div class="col l6 m6 s6">
+            <p><label><input type="checkbox" name="documents"><span>Report Card</span></label></p>
+        </div>
+        <div class="col l6 m6 s6">
+            <p><label><input type="checkbox" name="documents"><span>Trap Card</span></label></p>
+        </div>
+        
+        <button class="btn waves-effect waves-light center" type="submit" name="action">save
+            <i class="material-icons right">save</i>
+        </button>
+        <a href="#" class="waves-effect waves-light btn red accent-1">reset<i class="material-icons right">close</i></a>
+
+    </form>
+</div>
+{% endblock %}
