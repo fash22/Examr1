@@ -3,7 +3,7 @@ Examr server code
 by: fash22
 """
 
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, url_for, request, redirect
 from wtforms import StringField
 from flask_wtf import Form
 import dummy
@@ -100,10 +100,16 @@ def register():
         examinee = Examinee(first_name=f,middle_name=m,last_name=l,school=sc)
         db.session.add(examinee)
         db.session.commit()
-        template = 'Hello %s' % f
+        template = redirect('examinees')
         print(form.data)
 
+    return template
 
+@app.route('/db/clear')
+def clear_db():
+    db.drop_all()
+    db.create_all()
+    return redirect('examinees')
 
     return template
 
